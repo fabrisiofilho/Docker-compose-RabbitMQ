@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+    rabbitmq3:
+        container_name: "rabbitmq"
+        image: rabbitmq:3.8-management-alpine
+        environment:
+            - RABBITMQ_DEFAULT_USER=admin
+            - RABBITMQ_DEFAULT_PASS=admin123
+            - RABBITMQ_USERNAME= admin
+            - RABBITMQ_PASSWORD= admin123
+            - RABBITMQ_PORT= 5672
+            - RESPONSE_EXCHANGE= guideme.exchange
+            - RESPONSE_ROUTING_KEY= guideme.routingkey
+        ports:
+            - '5672:5672'
+            - '15672:15672'
